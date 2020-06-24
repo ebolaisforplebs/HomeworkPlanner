@@ -1,0 +1,53 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App6.Views.ItemDetailPage"
+             Title="Expanded View"
+             x:Name="BrowseItemsPage">
+
+    <ContentPage.ToolbarItems>
+       
+        
+        
+
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadItemsCommand}">
+            <ListView x:Name="dets" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        
+                        <ViewCell>
+                            
+
+                            <StackLayout>
+                                <Label Text="Subject:" FontSize="Medium" HorizontalOptions="CenterAndExpand"/>
+                                <Label Text="{Binding Subject}" FontSize="Large" x:Name="Subject" HorizontalOptions="CenterAndExpand" TextDecorations="Underline" />
+                                <Label Text="Department:" FontSize="Medium" HorizontalOptions="CenterAndExpand"/>
+                                <Label Text="{Binding Department}" FontSize="Small" x:Name="Department" HorizontalOptions="Center" TextDecorations="Underline"/>
+                                <Label Text="Homework Name:" FontSize="Medium" HorizontalOptions="CenterAndExpand"/>
+                                <Label Text="{Binding Name}" FontSize="Medium" x:Name="Name" HorizontalOptions="Center" TextDecorations="Underline"/>
+                                <Label Text="Homework Description:" FontSize="Medium" HorizontalOptions="CenterAndExpand"/>
+                                <Label Text="{Binding Description}" FontSize="Small" x:Name="Description" HorizontalOptions="Center" TextDecorations="Underline"/>
+                                <Label Text="Due Date:" FontSize="Medium" HorizontalOptions="CenterAndExpand"/>
+                                <Label Text="{Binding Date}" FontSize="Small" x:Name="DueDate" HorizontalOptions="Center" TextDecorations="Underline"/>
+                                
+
+                            </StackLayout>
+                        </ViewCell>
+
+
+
+                    </DataTemplate>
+
+
+                </ListView.ItemTemplate>
+
+
+            </ListView>
+
+        </RefreshView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App6.Views.NewItemPage"
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             Title="New Item">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
+        <ToolbarItem Text="Save" Clicked="Save_Clicked" />
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="15">
+            
+            <Label Text="Text" FontSize="Medium" />
+            <Entry Text="{Binding Item.Text}" d:Text="Item name" FontSize="Small" Placeholder="Name of Homework" x:Name="ItemName"/>
+            <Label Text="Description" FontSize="Medium"/>
+            <Entry Text="{Binding Item.Description}" d:Text="Item description" FontSize="Small" Placeholder="Homework Details" Margin="0" x:Name="ItemDescription"/>
+            <Label Text="Department Selector" FontSize="Small"/>
+            <Picker Title="Department Selector"   x:Name="DepartmentSelector" SelectedIndexChanged="DepartmentSelector_SelectedIndexChanged" SelectedItem="{Binding Item.Department}" SelectedIndex="{Binding Item.Index}"/>
+            <Picker Title="Subject Selector" x:Name="SubjectSelector" SelectedItem="{Binding Item.Subject}"/>
+            <DatePicker x:Name="DueDate" MinimumDate="{x:Static System:DateTime.Now}" DateSelected="DueDate_DateSelected" Date="{Binding Item.DueDate}"/>
+            <Label Text="The Due Date must be after today" FontSize="Small" TextColor="Red"></Label>
+            <Label Text="Percentage Completed" FontSize="Small"/>
+            
+            <ImageButton Clicked="ImageButton_Clicked" Focused="ImageButton_Focused"/>
+            
+           
+
+
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>
